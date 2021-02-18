@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Datalist - autocomplete</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		body{
+			background-color: #f9f9f9;
+		}
+
+		.pesquisa{
+			width: 400px;
+			height: 40px;
+			margin: 200px auto;
+		}
+
+		#texto{
+			width: 350px;
+			height: 40px;
+			float: left;
+			font-family: 'Roboto', sans-serif;
+			font-size: 20px;
+
+		}
+
+		#texto:focus{
+			border: solid 2px #2f4550; 
+			padding-left: 5px;
+		}
+
+		.btn_search{
+			background-color: #2f4550;
+			width: 30px;
+			height: 30px;
+			padding: 5px;
+			cursor: pointer;
+			border-radius: 0 3px 3px 0;
+		}
+
+	
+	</style>
+
+</head>
+<body>
+	<form class="pesquisa">
+		<input type="search" id="texto" list="historico" placeholder="Pesquisar" />
+		<img src="lupa.png" class="btn_search" />
+
+		<datalist id="historico"></datalist>
+	</form>
+
+	<script src="autocomplete-functions.js" type="text/javascript"></script>
+</body>
+</html>
