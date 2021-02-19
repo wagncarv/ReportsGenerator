@@ -9,17 +9,7 @@ function openModal(){
 }
 
 function closeModal(event){
-    const isEscKey = event.key === "Escape"
-    console.log(event)
-    if(isEscKey){
+    if(event.key === "Escape"){
         modalWrapper.classList.add("invisible")
     }
 }
-
-// document.addEventListener("keydown", function(event){
-//     const isEscKey = event.key === "Escape"
-//     console.log(event)
-//     if(isEscKey){
-//         modalWrapper.classList.add("invisible")
-//     }
-// })
