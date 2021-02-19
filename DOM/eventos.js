@@ -8,14 +8,25 @@ function print(){
 }
 
 //eventos de teclado
-const input = document.querySelector("input")
+// const input = document.querySelector("input")
 
 // input.onkeypress = function(){
 //     console.log("Rodou")
 // }
 
-//diversos eventos 
+//diversos eventos
 const h1 = document.querySelector("h1")
 
-h1.addEventListener('click',print)
+// h1.addEventListener('click',print)
 
+//OUTRA FORMA DE ACIONAR FUNÇÃO
+// h1.onclick = print
+
+//ARGUMENTO event
+//ARGUMENTO EVENT
+const input = document.querySelector("input")
+input.onkeypress = function(event){
+    console.log(event.key)
+    console.log(event.currentTarget)
+    console.log(event.currentTarget.value)
+}
