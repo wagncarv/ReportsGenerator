@@ -1,0 +1,293 @@
+//import soma, { sub, mult} from './funcoes';
+//import * as funcoes from '../funcoes';
+//console.log(mult(3, 3));
+//console.log(soma(7, 4));
+//console.log(sub(5,3));
+//console.log(somaFunc(2,13));
+
+//console.log(funcoes);
+//console.log(funcoes.mult(3, 7));
+//console.log(funcoes.sub(21, 7));
+//CLASSES
+/*
+class List{
+    constructor(){
+        this.data = [];
+    }
+
+    add(data){
+        this.data.push(data);
+        console.log(this.data);
+    }
+}
+
+class TodoList extends List{
+    constructor(usuario){
+        super();
+        this.usuario = usuario;
+    }
+
+    mostraUsuario(){
+        console.log(this.usuario);
+    }
+}
+
+//MÉTODO ESTÁTICO
+
+class TodoList2{
+    static addTodo(todo){
+        console.log(todo);
+    }
+}
+*/
+
+/*
+const lista = new TodoList();
+const lista = new TodoList('Wagner Carvalho');
+
+document.querySelector('#novoTodo').onclick = function(){
+    lista.add("Novo todo");
+};
+
+lista.mostraUsuario();
+
+TodoList2.addTodo('todo static');
+*/
+
+//let e const
+/*
+const a = 1;
+//a = 3;//Erro! não é possível reatribui valor a constante
+
+const usuario ={nome: 'Wagner'};
+
+usuario.nome = 'Paulo';
+console.log(usuario);
+*/
+
+/*
+function teste(x){
+    let y = 2;
+
+    if(x > 5){
+        console.log(x + y);
+    }
+}
+
+teste(10);
+
+*/
+
+//ARRAYS 
+//FUNÇÕES map(), reduce(), filter(), find()
+/*
+const vetor = [1, 7, 3, 10, 9, 5, 2];
+
+const newVetor = vetor.map(function(item, index){
+    //return item * 2;
+    return item + index;
+});
+
+console.log(newVetor);
+
+const soma = vetor.reduce(function(total, next){
+    return total + next;
+});
+
+console.log(soma);
+
+const filter = vetor.filter(function(item){
+    return item % 2 === 0;
+});
+
+console.log(filter);
+
+
+const find = vetor.find(function(item){
+    return item === 3;
+});
+
+console.log(find);
+
+*/
+
+//ARROW FUNCTIONS
+/*
+const vetor = [1,2, 3, 4, 5];
+
+//const newVetor = vetor.map(item => {
+//    return item * 2;
+//});
+
+const newVetor = vetor.map(item => item * 2);
+
+console.log(newVetor);
+
+const teste = () => ({nome: 'Wagner'});
+console.log(teste());
+
+*/
+
+/*
+//VALORES APDRÃO
+//function soma(a = 0, b = 0){
+//    return a + b;
+//}
+
+const soma = (a = 0, b = 1) => a + b;
+console.log(soma());
+console.log(soma(1, 2));
+*/
+
+//DESESTRUTURAÇÃO
+/*
+const usuario ={
+    nome: 'Wagner',
+    idade: 38,
+    endereco:{
+        rua: 'Samambaia',
+        numero: 7,
+        cidade:'Serra'
+    }
+};
+
+const {nome, idade, endereco:{cidade}} = usuario;
+//console.log(nome);
+//console.log(idade);
+//console.log(cidade);
+
+function mostrausuario({nome, endereco:{cidade}}){
+    console.log(nome, cidade);
+}
+
+mostrausuario(usuario);
+
+*/
+
+//OPERADORES rest e spread
+//rest = serve para pegar o resto das propriedades
+/*
+const usuario ={
+    nome: 'Wagner',
+    idade: 38,
+    endereco:{
+        rua: 'Samambaia',
+        numero: 7,
+        cidade:'Serra'
+    }
+};
+
+const {nome, ...resto} = usuario ;
+console.log(nome);
+console.log(resto);
+
+const vetor = [1, 2, 3, 4];
+const [a, b, ...c] = vetor;
+console.log(a);
+console.log(b);
+console.log(c);
+
+function soma(a, b,...params){
+    return params.reduce((total, next) => total + next);
+}
+console.log(soma(3, 5, 6, 7, 10, 9));
+
+//spread
+//spread = repassa valores para outra estrutura de dados
+const vetor1 = [1, 2, 3];
+const vetor2 = [4, 5, 6];
+const vetor3 = [...vetor1, ...vetor2];
+console.log("vetor3 [] = " + vetor3);
+
+const usuario1 ={
+    nome: 'Wagner',
+    idade: 38,
+    endereco:{
+        rua: 'Samambaia',
+        numero: 7,
+        cidade:'Serra'
+    }
+};
+
+const usuario2 = {...usuario1, nome: 'Paulus'};
+console.log(usuario2);
+
+*/
+
+//TEMPLATE LITERALS
+/*
+const nome = 'Paulus';
+const idade = 30;
+
+console.log(`Meu nome é ${nome}, tenho ${idade} anos.`);
+*/
+
+//OBJECT SHORT SYNTAX
+/*
+const nome = 'Paulus';
+const idade = 30;
+const usuario = {
+    nome, 
+    idade,
+    cidade: 'Serra'
+};
+
+console.log(usuario);
+*/
+
+//
+alert('opa');
+
+
+import axios from 'axios';
+
+class Api{
+    static async getUserInfo(username){
+        try{
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);
+        }catch(err){
+            console.warn("Erro na API.");
+        }
+    {
+}
+
+Api.getUserInfo('diego3g');
+
+//Promise
+
+//const minhaPromise = () => new Promise((resolve, reject)=>{
+//    setTimeout(() => {resolve('OK')}, 2000);
+//});
+
+//async function execMinhaPromise(){
+//    console.log(await minhaPromise());
+//    console.log(await minhaPromise());
+//    console.log(await minhaPromise());
+ // 
+//}
+
+//const execMinhaPromise = async () => {
+//    console.log(await minhaPromise());
+//    console.log(await minhaPromise());
+//    console.log(await minhaPromise());  
+//}
+
+//execMinhaPromise();
+
+//
+import axios from 'axios';
+
+class Api{
+    static async getUserInfo(username){
+        try{
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);
+        }
+        catch(err){
+            console.warn("Erro na API.");
+        }
+    }
+}
+
+Api.getUserInfo('diego3g');
