@@ -1,0 +1,72 @@
+<script>
+    //if else
+    /*
+    let temp = 37.6
+    if(temp >= 37.5){
+        console.log('Com febre')
+    }else if(temp < 37.5 && temp >= 37){
+        console.log('Febre moderada')
+    }else{
+        console.log('Saudável')
+    }
+  
+    */
+
+    //switch
+    /*
+    let exp = 3
+    switch(exp){
+        case 1:
+            console.log(exp)
+            break;
+        case 2:
+        console.log(exp)
+            break;
+        default:
+        console.log(0)
+
+    }
+
+    */
+//    console.log(calculate(4, 3, '/'))
+
+    function calculate(num1, num2, operator){
+        let result
+
+        switch(operator){   
+            case '+':
+                result = num1 + num2
+                break;
+            case '-':
+                result = num1 - num2
+                break;
+            case '*':
+                result = num1 * num2
+                break;
+            case '/':
+                result = num1 / num2
+                break;
+            default:
+                console.log('Não implementado')
+                break;
+        }
+
+        return result
+    }
+
+    //throw try/catch
+    function sayMyName(name = ""){
+        if(name === ""){
+            throw new Error("Nome é obrigatório")
+        }
+
+        console.log("Depois do erro")
+    }
+
+    try{
+        sayMyName()
+    }catch(e){
+        console.log(e)
+    }
+
+</script>

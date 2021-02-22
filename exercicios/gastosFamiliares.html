@@ -1,0 +1,33 @@
+<script>
+    /*
+        crie objeto que possuirá 2 propriedades, ambas array:
+        1 - receitas: []
+        2 - despesas: []
+        criar função que calcule o total de receitas e despesas, mostre uma mensagem 
+        se a família estiver com saldo positivo ou negativo, seguido do valor do saldo.
+    */
+
+    let family = {
+        income: [2500, 3200, 250.43,360.45],
+        expense: [3320.34, 128.45, 176.87, 1450]
+    }
+
+    //soma
+    function sumAll(values){
+        return values.reduce((acc, number) => {
+            return acc += number
+        }, 0)
+    }
+
+    //calcula
+    function calculateBalance(values){
+        let situation = "negativo"
+        let total = sumAll(values.income) - sumAll(values.expense)
+        if(total >= 0){situation = "positivo"}
+        return `O saldo é ${situation}. Total: R$${total.toFixed(2)}`
+    }
+
+    console.log(calculateBalance(family))
+
+</script>
+

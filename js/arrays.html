@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <div id="view"></div>
+    <script>
+        function print(values){
+            console.log(values)
+            const div = document.querySelector("#view")
+            for(let i = 0; i < values.length; i++){
+                let text = document.createTextNode(values[i])
+                div.appendChild(text)
+                div.appendChild(document.createTextNode(" "))
+            }
+        }
+    
+        let myArray = ['a', 'b', 'c', 'd']
+        let objArray = new Array('a', 'b', 'c', 'd')
+        let arrPos = new Array(10)
+        // print(myArray)
+        // console.log(myArray)
+        // console.log(objArray)
+        // console.log(arrPos)
+    
+        // contar elementos do array
+        // console.log(myArray.length)
+
+        //STRINGS PARA Arrays
+        let word = "manipulação"
+        let words = Array.from(word)
+        // console.log(words)
+        // print(words)
+
+        //MANIPULAÇÃO DE ARRAYS / MÉTODOS 
+        let techs = ["html", "css", "js"]
+        techs.push("nodejs") //adicionar elemento no fim
+        // print(techs)
+
+        techs.unshift("tailwind") //adicionar elemento no início
+        // print(techs)
+
+        // techs.pop() //remover elemento no fim
+        // print(techs)
+
+        // techs.shift() //reover do início
+        // print(techs)
+
+        let valor = techs.slice(1, 3) //pegar intervalo no array
+        // print(techs)
+        // console.log(valor)
+
+        techs.splice(1, 1) //remover de qualquer posição
+        // print(techs)
+
+        //ÍNDICE
+        // techs.indexOf("js")
+        console.log(techs.indexOf("js"))
+    
+    </script>
+    
+</body>
+</html>

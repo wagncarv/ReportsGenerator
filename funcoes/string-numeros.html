@@ -23,8 +23,19 @@
     // console.log(word.toLowerCase())
 
     //VERIFICAR SE TEXTO TEM PALAVRA
-    let phrase = "Eu quero café!"
-    console.log(phrase.includes("chocolate"))
-    console.log(phrase.includes("café"))
+    // let phrase = "Eu quero café!"
+    // console.log(phrase.includes("chocolate"))
+    // console.log(phrase.includes("café"))
+
+    //SEPARAÇÃO DE STRINGS
+    let phrase = "Eu quero café com com chocolate"
+    let myArray = phrase.split("o")
+    // console.log(myArray)
+
+    let frase = "Javascript é linguagem fracamente tipada baseada em protótipos"
+    let fArray = frase.split(" ")
+    let fraseJunta = fArray.join("_")
+    console.log(fraseJunta)
+
 
 </script>

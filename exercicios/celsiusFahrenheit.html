@@ -1,0 +1,50 @@
+<script>
+    /*
+        crie uma função que receba uma string em celsius ou fahrenheit
+        e faça  a conversão de uma unidade para outra.
+
+        C = (F - 32) * 5/9
+        F = C * 9/5 + 32
+    */
+    //RESOLUÇÃO 1
+
+    function convert(temperature, degree){
+        let temp
+        switch(degree){
+            case 'f':
+                temp = celsiusToFahrenheit(temperature)
+                break;
+            case 'c':
+                temp = fahrenheitToCelsius(temperature)
+                break;
+            default:
+                temp = 0
+                break;
+        }
+        return temp
+    }
+
+   function celsiusToFahrenheit(celsius){
+       return (celsius * 9/5 + 32).toFixed(2)
+   }
+
+   function fahrenheitToCelsius(fahrenheit){
+       return ((fahrenheit - 32) * 5/9).toFixed(2)
+   }
+
+   //RESOLUÇÃO 2
+   function transformDegree(degree){
+       const existsCelsius = degree.toUpperCase().includes('c')
+       const existsFahrenheit = degree.toUpperCase().includes('f')
+
+       if(!existsCelsius && !existsFahrenheit){
+           throw new Error("Grau não identificado")
+       }
+   }
+
+   //EXECUÇÃO DAS SOLUÇÕES
+   console.log(convert(35, 'f')) // solução 1
+//    console.log(transformDegree('50f')) //solução 2
+
+
+</script>
