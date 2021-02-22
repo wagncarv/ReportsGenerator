@@ -17,8 +17,11 @@
             case 'c':
                 temp = fahrenheitToCelsius(temperature)
                 break;
+            case '':
+                temp = celsiusToFahrenheit(temperature)
+                break;
             default:
-                temp = 0
+                throw new Error("Grau inválido")
                 break;
         }
         return temp
@@ -44,7 +47,15 @@
 
    //EXECUÇÃO DAS SOLUÇÕES
    console.log(convert(35, 'f')) // solução 1
+   console.log(convert(95, 'c')) // solução 1
+   console.log(convert(35, '')) // solução 1
+   console.log(convert(95, 'x')) // solução 1
+
+   //TESTES
 //    console.log(transformDegree('50f')) //solução 2
+// let v = "50F"
+// let z = Number(v.split(/[A-Za-z]/gi)[0])
+// console.log(z)
 
 
 </script>
