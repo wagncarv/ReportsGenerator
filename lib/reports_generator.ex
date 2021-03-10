@@ -68,8 +68,8 @@ defmodule ReportsGenerator do
   defp build_report(foods, users), do: %{"foods" => foods, "users" => users}
 end
 
-# ReportsGenerator.build("report_test")
-# :timer.tc(fn -> ReportsGenerator.build("report_complete") end)
-# ReportsGenerator.build("report_complete") |> ReportsGenerator.fetch_higher_cost()
-# ReportsGenerator.build_from_many(["report_1", "report_2", "report_3"])
-# :timer.tc(fn -> ReportsGenerator.build_from_many(["report_1", "report_2", "report_3"]) end)
+# ReportsGenerator.build("report_test.csv")
+# :timer.tc(fn -> ReportsGenerator.build("report_complete.csv") end)
+# ReportsGenerator.build("report_complete.csv") |> ReportsGenerator.fetch_higher_cost()
+# ReportsGenerator.build_from_many(["report_1.csv", "report_2.csv", "report_3.csv"])
+# :timer.tc(fn -> ReportsGenerator.build_from_many(["report_1.csv", "report_2.csv", "report_3.csv"]) end)

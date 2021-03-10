@@ -4,7 +4,7 @@ defmodule ReportsGenerator.ParserTest do
 
   describe "parse_file/1" do
     test "parse the file" do
-      file_name = "report_test"
+      file_name = "report_test.csv"
 
       response =
         file_name
