@@ -21,10 +21,16 @@ defmodule ReportsGenerator do
   end
 
   def build_from_many(file_names) do
-    file_names
-    |> Task.async_stream(&build/1)
-    |> Enum.reduce(report_acc(), fn {:ok, result}, report -> sum_reports(report, result) end)
+    result =
+      file_names
+      |> Task.async_stream(&build/1)
+      |> Enum.reduce(report_acc(), fn {:ok, result}, report -> sum_reports(report, result) end)
 
+    {:ok, result}
+  end
+
+  def build_from_many(file_names) when not is_list(file_names) do
+    {:error, "Please provide a list of Strings"}
   end
 
   def fetch_higher_cost(report, option) when option in @options do
@@ -39,7 +45,10 @@ defmodule ReportsGenerator do
     build_report(foods, users)
   end
 
-  defp sum_reports(%{"foods" => foods1, "users" => users1}, %{"foods" => foods2, "users" => users2}) do
+  defp sum_reports(%{"foods" => foods1, "users" => users1}, %{
+         "foods" => foods2,
+         "users" => users2
+       }) do
     foods = merge_maps(foods1, foods2)
     users = merge_maps(users1, users2)
     build_report(foods, users)
@@ -57,9 +66,10 @@ defmodule ReportsGenerator do
   end
 
   defp build_report(foods, users), do: %{"foods" => foods, "users" => users}
-
 end
 
 # ReportsGenerator.build("report_test")
+# :timer.tc(fn -> ReportsGenerator.build("report_complete") end)
 # ReportsGenerator.build("report_complete") |> ReportsGenerator.fetch_higher_cost()
 # ReportsGenerator.build_from_many(["report_1", "report_2", "report_3"])
+# :timer.tc(fn -> ReportsGenerator.build_from_many(["report_1", "report_2", "report_3"]) end)

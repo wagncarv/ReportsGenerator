@@ -60,9 +60,10 @@ defmodule ReportsGeneratorTest do
     test "when the option is 'users', returns the who the most spending user" do
       file_name = "report_test"
 
-      response = file_name
-      |> ReportsGenerator.build()
-      |> ReportsGenerator.fetch_higher_cost("users")
+      response =
+        file_name
+        |> ReportsGenerator.build()
+        |> ReportsGenerator.fetch_higher_cost("users")
 
       expected_response = {:ok, {"5", 49}}
 
@@ -72,9 +73,10 @@ defmodule ReportsGeneratorTest do
     test "when option is 'foods', returns the most eaten food" do
       file_name = "report_test"
 
-      response = file_name
-      |> ReportsGenerator.build()
-      |> ReportsGenerator.fetch_higher_cost("foods")
+      response =
+        file_name
+        |> ReportsGenerator.build()
+        |> ReportsGenerator.fetch_higher_cost("foods")
 
       expected_response = {:ok, {"esfirra", 3}}
 
@@ -84,9 +86,10 @@ defmodule ReportsGeneratorTest do
     test "when option is invalid, returns an error" do
       file_name = "report_test"
 
-      response = file_name
-      |> ReportsGenerator.build()
-      |> ReportsGenerator.fetch_higher_cost("drinks")
+      response =
+        file_name
+        |> ReportsGenerator.build()
+        |> ReportsGenerator.fetch_higher_cost("drinks")
 
       expected_response = {:error, "Invalid option"}
 
